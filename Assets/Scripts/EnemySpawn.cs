@@ -7,14 +7,14 @@ public class EnemySpawn : MonoBehaviour
 
     private void Start()
     {
-        _enemy = gameObject.GetComponentInChildren<Enemy>();
+        _enemy = GetComponentInChildren<Enemy>();
     }
 
     public void CreateEnemy()
     {
         if (_enemy == null)
         {
-            Instantiate(_enemyTemplate, gameObject.transform);
+            _enemy = Instantiate(_enemyTemplate, gameObject.transform).GetComponent<Enemy>();
         }
     }
 }
