@@ -8,17 +8,17 @@ public class EnemiesSpawns : MonoBehaviour
     private void Start()
     {
         _spawns = gameObject.GetComponentsInChildren<EnemySpawn>();
-        StartCoroutine(EnemySpawn());
+        StartCoroutine(CraeteEnemies());
     }
 
-    private IEnumerator EnemySpawn()
+    private IEnumerator CraeteEnemies()
     {
         float waitSeconds = 2f;
         var waitTime = new WaitForSeconds(waitSeconds);
 
         foreach(var spawn in _spawns)
         {
-            spawn.Spawn();
+            spawn.CreateEnemy();
             yield return waitTime;
         }
     }

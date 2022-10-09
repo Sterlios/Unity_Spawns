@@ -10,7 +10,7 @@ public class EnemySpawn : MonoBehaviour
         _enemy = gameObject.GetComponentInChildren<Enemy>();
     }
 
-    public void Spawn()
+    public void CreateEnemy()
     {
         if (_enemy == null)
         {
